@@ -40,7 +40,7 @@
 
 # Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether their number was too large or too small. 
 # At the end the number of tries needed should be printed. I counts only as one try if they input the same number multiple times consecutively.
-    $secret = Get-random -Maximum 5
+    $secret = Get-random -Maximum 100
     Write-Host "Lets play a game of high or low. I'll think of a number between 1 and 100 and you have to guess it."
     [int]$guess = Read-host "What number am i thinking of?"
     $turn = 1
@@ -58,10 +58,16 @@
             $turn++
         }
     }
-    Write-output "Congratulations you guessed the number in $turn guesses"
+    Write-output "Congratulations you guessed the number in $turn guesses!"
 
 
 # Write a program that prints the next 20 leap years.
-
+    $year = (get-date -Format yyy).ToInt16()
+To determine whether a year is a leap year, follow these steps: 
+If the year is evenly divisible by 4, go to step 2. Otherwise, go to step 5.
+If the year is evenly divisible by 100, go to step 3. Otherwise, go to step 4.
+If the year is evenly divisible by 400, go to step 4. Otherwise, go to step 5.
+The year is a leap year (it has 366 days).
+The year is not a leap year (it has 365 days).
 
 # Write a program that computes 4\cdot \sum_{k=1}^{10^6} \frac{(-1)^{k+1}}{2k-1} = 4\cdot(1-1/3+1/5-1/7+1/9-1/11\ldots).
