@@ -22,6 +22,10 @@
     $total = 0
     (1..$n) | ForEach-Object {$total += $_}
     Write-output "The sum of numbers from 1 to $n equals $total"
+
+    [int]$n = Read-Host 'Please enter a number?'
+    (1..$n) | ForEach-Object {$total *= $_}
+    Write-output "The sum of numbers from 1 to $n equals $total"
     
 # Modify the previous program such that only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17
     [int]$n = Read-Host 'Please enter a number?'
@@ -34,8 +38,8 @@
     [int]$choice = Read-Host "Would you like to know the sum or product of 1 to $n? Enter 1 for sum and 2 for product"
     $total = 0
     switch ($choice) {
-        1 {(1..$n) | ForEach-Object {$total += $_} | Write-output "The sum of numbers from 1 to $n equals $total"}
-        2 { }
+        1 {(1..$n) | ForEach-Object {$total += $_} | Write-output "The sum of numbers from 1 to $n is $total"}
+        2 {(1..$n) | ForEach-Object {$total += $total * $_} | write-output "The product of numbers from 1 to $n is $total"}
     }
 
 # Write a program that prints a multiplication table for numbers up to 12.
