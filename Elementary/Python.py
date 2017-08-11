@@ -3,11 +3,20 @@
 # Elementary
 
 # Write a program that prints ‘Hello World’ to the screen.
-    Write-Output 'Hello World'
+    print('Hello World')
 # Write a program that asks the user for their name and greets them with their name.
-    
+    name = input('What your name? ')
+    print("Hello " + name)
 # Modify the previous program such that only the users Alice and Bob are greeted with their names.
+    name = input("Hi, what is your name? ")
+    if name == 'Alice' or 'Bob':
+        print("Hello " + name)
+    else:
+        print("Oh hello")
+    input( )
 # Write a program that asks the user for a number n and prints the sum of the numbers 1 to n
+    n = input('Please enter a number? ')
+    print("1")
 # Modify the previous program such that only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17
 # Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n.
 # Write a program that prints a multiplication table for numbers up to 12.
