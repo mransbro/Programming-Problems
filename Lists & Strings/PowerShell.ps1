@@ -1,19 +1,94 @@
 # Lists, Strings
-
 # If your language of choice doesn’t have a build in list and/or string type (e.g. you use C), these exercises should also be solvable for arrays. However, some solutions are very different between an array-based list (like C++’s vector) and a pointer based list (like C++’s list), at least if you care about the efficiency of your code. So you might want to either find a library, or investigate how to implement your own linked list if your language doesn’t have it.
 
 # Write a function that returns the largest element in a list.
+<<<<<<< HEAD
 function longestItem ($items) {$items | Sort-Object -Property  | select -first 1}
 
+=======
+    function largestElement {
+        param (
+            [string[]]$items
+        )
+        $n = 0
+        foreach ($fruit in $fruits) {
+            if ($fruit.length -gt $n) {
+                $n = $fruit.length
+                $longest = $fruit
+            }  
+        }
+        write-output "The longest element in the array is $longest"
+    }
+>>>>>>> 7e35d8c00f2d5b14ff9c262386c00b6726e93f18
 # Write function that reverses a list, preferably in place.
+    function reverseList {
+        param (
+            $items
+        )
+        $r = @()
+        $i = $items.count
+        foreach ($item in $items) {
+            $r += $items[$i-1]
+            $i--
+        }
+        write-output $r
+    }
 # Write a function that checks whether an element occurs in a list.
+
 # Write a function that returns the elements on odd positions in a list.
+  function oddItems {
+    param (
+        $items
+    )
+    $odds = @()
+    foreach ($n in (1..($fruits.count))){
+        if ($n % 2 -eq 1) {
+            $odds += $n
+        } 
+    }
+    foreach ($odd in $odds) {
+        write-output $fruits[$odd]
+    }
+}
 # Write a function that computes the running total of a list.
 # Write a function that tests whether a string is a palindrome.
+    function isThisStringAPalindrome ([string]$string){
+        $text = $string -replace ' ', ''
+        $array = $text.ToCharArray()
+        [array]::Reverse($array)
+        $text -like (-join $array) 
+    }
 # Write three functions that compute the sum of the numbers in a list: using a for-loop, a while-loop and recursion. (Subject to availability of these constructs in your language of choice.)
+    function sumFor ($numbers) {
+        $sum = 0
+        for ($i = 0; $i -lt $numbers.Count; $i++) {
+            $sum += $numbers[$i]
+        }
+        $sum
+    }
+    function sumWhile ($numbers) {
+        $i = 0
+        while ($i -lt $numbers.count) {
+            $sum += $numbers[$i]
+            $i++
+        }
+        $sum
+    }
+    function sumRecurse ($numbers) {
+        if ($numbers.count -eq 0) {
+            write-output 0
+        } else {
+            return $numbers[0] + (sumRecurse $numbers[1..$numbers.length])
+        }
+    }
+
 # Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares (a natural number n is a perfect square if it can be written as n=m*m for some other natural number m. 1,4,9,16,25 are the first 5).
 # Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
+    function concatLists($a,$b) {
+        return [string]$c = $a + $b
+    }
 # Write a function that combines two lists by alternatingly taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+    function 
 # Write a function that merges two sorted lists into a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. You can do this quicker than concatenating them followed by a sort.
 # Write a function that rotates a list by k elements. For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a copy of the list. How many swap or move operations do you need?
 # Write a function that computes the list of the first 100 Fibonacci numbers.

@@ -24,8 +24,8 @@
     Write-output "The sum of numbers from 1 to $n equals $total"
 
     [int]$n = Read-Host 'Please enter a number?'
-    (1..$n) | ForEach-Object {$total *= $_}
-    Write-output "The sum of numbers from 1 to $n equals $total"
+    $total = ((1..$n) | measure-object -sum).sum
+    Write-output "The product of numbers from 1 to $n equals $total"
     
 # Modify the previous program such that only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17
     [int]$n = Read-Host 'Please enter a number?'
@@ -34,12 +34,12 @@
     Write-output "The sum of numbers that are multiples of 3 or 5 from 1 to $n equals $total"
 
 # Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n.
-    [int]$n = Read-host = "Enter a number"
-    [int]$choice = Read-Host "Would you like to know the sum or product of 1 to $n? Enter 1 for sum and 2 for product"
-    $total = 0
+    [int]$n = Read-host = "Please enter a number"
+    $choice = Read-Host "Would you like to know the sum or product of 1 to $n? Enter 1 for sum and 2 for product"
+    $total = 1
     switch ($choice) {
-        1 {(1..$n) | ForEach-Object {$total += $_} | Write-output "The sum of numbers from 1 to $n is $total"}
-        2 {(1..$n) | ForEach-Object {$total += $total * $_} | write-output "The product of numbers from 1 to $n is $total"}
+        1 {$sum = ((1..$n) | measure-object -sum).sum ; Write-output "The sum of numbers from 1 to $n is $sum"}
+        2 {(1..$n) | ForEach-Object {$total *= $_} ; Write-output "The product of numbers from 1 to $n is $total"}
     }
 
 # Write a program that prints a multiplication table for numbers up to 12.
