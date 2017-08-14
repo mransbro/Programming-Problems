@@ -90,7 +90,12 @@ function longestItem ($items) {$items | Sort-Object -Property  | select -first 1
 # Write a function that combines two lists by alternatingly taking elements, e.g. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
     function 
 # Write a function that merges two sorted lists into a new sorted list. [1,4,6],[2,3,5] → [1,2,3,4,5,6]. You can do this quicker than concatenating them followed by a sort.
+    function sortList ($a, $b) {
+        $c = $a + $b
+        $c | sort
+    }
 # Write a function that rotates a list by k elements. For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a copy of the list. How many swap or move operations do you need?
+
 # Write a function that computes the list of the first 100 Fibonacci numbers.
 # Write a function that takes a number and returns a list of its digits.
 # Write functions that add, subtract, and multiply two numbers in their digit-list representation (and return a new digit list). If you’re ambitious you can implement Karatsuba multiplication. Try different bases. What is the best base if you care about speed? If you couldn’t completely solve the prime number exercise above due to the lack of large numbers in your language, you can now use your own library for this task.
