@@ -2,10 +2,6 @@
 # If your language of choice doesn’t have a build in list and/or string type (e.g. you use C), these exercises should also be solvable for arrays. However, some solutions are very different between an array-based list (like C++’s vector) and a pointer based list (like C++’s list), at least if you care about the efficiency of your code. So you might want to either find a library, or investigate how to implement your own linked list if your language doesn’t have it.
 
 # Write a function that returns the largest element in a list.
-<<<<<<< HEAD
-function longestItem ($items) {$items | Sort-Object -Property  | select -first 1}
-
-=======
     function largestElement {
         param (
             [string[]]$items
@@ -19,7 +15,6 @@ function longestItem ($items) {$items | Sort-Object -Property  | select -first 1
         }
         write-output "The longest element in the array is $longest"
     }
->>>>>>> 7e35d8c00f2d5b14ff9c262386c00b6726e93f18
 # Write function that reverses a list, preferably in place.
     function reverseList {
         param (
@@ -97,6 +92,18 @@ function longestItem ($items) {$items | Sort-Object -Property  | select -first 1
 # Write a function that rotates a list by k elements. For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. Try solving this without creating a copy of the list. How many swap or move operations do you need?
 
 # Write a function that computes the list of the first 100 Fibonacci numbers.
+    function fibNumbers {$a = 1
+    $b = 1
+    $n = @()
+    do {
+        $c = $a + $b
+        $n += $c
+        $a = $b
+        $b = $c
+        write-output $n 
+    } until ($n.count -eq 100)
+}
+    
 # Write a function that takes a number and returns a list of its digits.
 # Write functions that add, subtract, and multiply two numbers in their digit-list representation (and return a new digit list). If you’re ambitious you can implement Karatsuba multiplication. Try different bases. What is the best base if you care about speed? If you couldn’t completely solve the prime number exercise above due to the lack of large numbers in your language, you can now use your own library for this task.
 # Write a function that takes a list of numbers, a starting base b1 and a target base b2 and interprets the list as a number in base b1 and converts it into a number in base b2 (in the form of a list-of-digits).
