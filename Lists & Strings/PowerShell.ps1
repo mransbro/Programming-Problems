@@ -2,10 +2,6 @@
 # If your language of choice doesn’t have a build in list and/or string type (e.g. you use C), these exercises should also be solvable for arrays. However, some solutions are very different between an array-based list (like C++’s vector) and a pointer based list (like C++’s list), at least if you care about the efficiency of your code. So you might want to either find a library, or investigate how to implement your own linked list if your language doesn’t have it.
 
 # Write a function that returns the largest element in a list.
-<<<<<<< HEAD
-function longestItem ($items) {$items | Sort-Object -Property  | select -first 1}
-
-=======
     function largestElement {
         param (
             [string[]]$items
@@ -19,7 +15,6 @@ function longestItem ($items) {$items | Sort-Object -Property  | select -first 1
         }
         write-output "The longest element in the array is $longest"
     }
->>>>>>> 7e35d8c00f2d5b14ff9c262386c00b6726e93f18
 # Write function that reverses a list, preferably in place.
     function reverseList {
         param (
@@ -34,23 +29,26 @@ function longestItem ($items) {$items | Sort-Object -Property  | select -first 1
         write-output $r
     }
 # Write a function that checks whether an element occurs in a list.
-
+    function isItInThere ($item, $list) {
+        $list -contains $item
+    }
 # Write a function that returns the elements on odd positions in a list.
-  function oddItems {
-    param (
-        $items
-    )
-    $odds = @()
-    foreach ($n in (1..($fruits.count))){
-        if ($n % 2 -eq 1) {
-            $odds += $n
-        } 
-    }
-    foreach ($odd in $odds) {
-        write-output $fruits[$odd]
-    }
+    function oddItems {
+        param (
+            $items
+        )
+        $odds = @()
+        foreach ($n in (1..($fruits.count))){
+            if ($n % 2 -eq 1) {
+                $odds += $n
+            } 
+        }
+        foreach ($odd in $odds) {
+            write-output $fruits[$odd]
+        }
 }
 # Write a function that computes the running total of a list.
+    
 # Write a function that tests whether a string is a palindrome.
     function isThisStringAPalindrome ([string]$string){
         $text = $string -replace ' ', ''
@@ -83,6 +81,7 @@ function longestItem ($items) {$items | Sort-Object -Property  | select -first 1
     }
 
 # Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares (a natural number n is a perfect square if it can be written as n=m*m for some other natural number m. 1,4,9,16,25 are the first 5).
+
 # Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
     function concatLists($a,$b) {
         return [string]$c = $a + $b

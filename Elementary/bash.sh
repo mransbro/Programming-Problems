@@ -26,6 +26,10 @@
     seq 1 $n
     
 # Modify the previous program such that only multiples of three or five are considered in the sum, e.g. 3, 5, 6, 9, 10, 12, 15 for n=17
+    echo Please input a number
+    read n
+    seq 1 $n
+
 # Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n.
 # Write a program that prints a multiplication table for numbers up to 12.
 # Write a program that prints all prime numbers. (Note: if your programming language does not support arbitrary size numbers, printing all primes up to the largest number you can easily represent is fine too.)
