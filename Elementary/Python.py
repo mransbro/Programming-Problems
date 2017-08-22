@@ -34,7 +34,11 @@
 # Write a program that prints all prime numbers. (Note: if your programming language does not support arbitrary size numbers, printing all primes up to the largest number you can easily represent is fine too.)
 
 # Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether their number was too large or too small. At the end the number of tries needed should be printed. I counts only as one try if they input the same number multiple times consecutively.
-
+    from random import randint
+    rn = randint(0,100)
+    print("Lets play a guessing game. I'll think of a number between 1 and 100 and you have to guess it.")
+    n = input("Guess a number? ")
+    
 # Write a program that prints the next 20 leap years.
 
 # Write a program that computes 4\cdot \sum_{k=1}^{10^6} \frac{(-1)^{k+1}}{2k-1} = 4\cdot(1-1/3+1/5-1/7+1/9-1/11\ldots).
