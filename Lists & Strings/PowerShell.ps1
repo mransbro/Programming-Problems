@@ -80,7 +80,17 @@
         }
     }
 
-# Write a function on_all that applies a function to every element of a list. Use it to print the first twenty perfect squares (a natural number n is a perfect square if it can be written as n=m*m for some other natural number m. 1,4,9,16,25 are the first 5).
+# Write a function on_all that applies a function to every element of a list. 
+# Use it to print the first twenty perfect squares (a natural number n is a perfect square if it can be written as n=m*m for some other natural number m. 1,4,9,16,25 are the first 5).
+$r = 1..20
+function perfect ($d) {
+    $d * $d
+}
+function on_all ($list) {
+    foreach ($item in $list) {
+        perfect $item
+    }
+}
 
 # Write a function that concatenates two lists. [a,b,c], [1,2,3] → [a,b,c,1,2,3]
     function concatLists($a,$b) {
@@ -113,6 +123,19 @@
 # Write a function that takes a list of numbers, a starting base b1 and a target base b2 and interprets the list as a number in base b1 and converts it into a number in base b2 (in the form of a list-of-digits).
 # Implement the following sorting algorithms: Selection sort, Insertion sort, Merge sort, Quick sort, Stooge Sort. Check Wikipedia for descriptions.
 # Implement binary search.
+$r = 1..10000
+function bSearch ($i, $array) {
+   do {
+       $a = $array.count
+       if ($array[$a/2] = $i) {
+           Write-Output "The item is at position $_"
+       } elseif ($array[$a/2] -lt $i) {
+        
+       }
+   } until ($i[3])
+}
+
+
 # Write a function that takes a list of strings an prints them, one per line, in a rectangular frame. For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
 
 *********
